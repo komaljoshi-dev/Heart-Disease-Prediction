@@ -1,0 +1,21 @@
+*.data
+*.log
+*.env
+# Virtual environment
+venv/
+
+# Editor
+.vscode/
+
+# Database
+*.db
+
+# Sensitive
+emails/
+app/uploads/
+
+# OS
+.DS_Store
+__pycache__/
+*.pyc
+
