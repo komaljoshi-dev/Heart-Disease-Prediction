@@ -1,0 +1,7 @@
+HEART DISEASE PREDICTION - FINAL SUMMARY
+=============================================
+
+Best Model: Random Forest Optimized
+Best Accuracy: 90.3%
+85% Requirement: MET
+Models >=85%: 3/5

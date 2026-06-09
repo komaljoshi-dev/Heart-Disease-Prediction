@@ -1,0 +1,11 @@
+model_1,model_2,mcnemar_stat,mcnemar_p,auc_diff,auc_diff_ci_low,auc_diff_ci_high,auc_boot_p
+Logistic Regression (RFE),Logistic regression optimized,0.25,0.617075077,0.002746619,-0.002315261,0.008741259,0.331
+Logistic Regression (RFE),Random Forest Optimized,10.08333333,0.001496164,-0.063507077,-0.098360672,-0.033010946,0
+Logistic Regression (RFE),SVM Optimized,2.5,0.113846298,-0.028754523,-0.049383853,-0.011014493,0
+Logistic Regression (RFE),Neural Network Optimized,6.722222222,0.009521891,-0.047511116,-0.090718562,-0.013013065,0.002
+Logistic regression optimized,Random Forest Optimized,10.08333333,0.001496164,-0.066253696,-0.10165306,-0.036052955,0
+Logistic regression optimized,SVM Optimized,4.166666667,0.041226833,-0.031501142,-0.051524214,-0.014730896,0
+Logistic regression optimized,Neural Network Optimized,8.642857143,0.003283461,-0.050257735,-0.093726778,-0.015921607,0
+Random Forest Optimized,SVM Optimized,2.083333333,0.148914673,0.034752554,0.012733876,0.061548258,0
+Random Forest Optimized,Neural Network Optimized,0.071428571,0.789268026,0.015995961,-0.015048927,0.048430927,0.298
+SVM Optimized,Neural Network Optimized,3.125,0.077099872,-0.018756593,-0.057691846,0.013478861,0.324
