@@ -1,0 +1,191 @@
+/* Home Page Specific Styles */
+
+body.home-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('../images/home-background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+/* Navbar Styles */
+.home-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 240, 245, 0.7); /* Semi-transparent pinkish background */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1030;
+}
+
+.home-navbar .navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #D32F2F !important; /* Darker Red */
+}
+
+.home-navbar .navbar-text {
+    color: #555;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.home-navbar .nav-link {
+    color: #333 !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.home-navbar .nav-link:hover {
+    color: #D32F2F !important;
+}
+
+.home-navbar .nav-link .fa-user-circle {
+    font-size: 2.5rem; /* Increased icon size */
+}
+
+.home-navbar .btn-outline-danger {
+    border-color: #D32F2F;
+    color: #D32F2F;
+    margin-left: 15px; /* Added space */
+    border-width: 2px;
+    font-weight: 700;
+    padding: 8px 16px;
+    font-size: 1.1rem;
+}
+
+.home-navbar .btn-outline-danger:hover {
+    background-color: #D32F2F;
+    color: #FFF;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 40px 0;
+}
+
+.hero-section h1 {
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: #C2185B; /* Pinkish Red */
+}
+
+.hero-section .tagline {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #555;
+    margin: 20px 0;
+}
+
+.hero-section .btn-primary {
+    background-color: #D32F2F;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero-section .btn-primary:hover {
+    background-color: #B71C1C; /* Darker Red */
+    transform: translateY(-3px);
+}
+
+.hero-row {
+    padding-left: 6rem;
+}
+
+.hero-section .img-fluid {
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+}
+
+
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 30vh;
+}
+
+.about-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 0;
+    background-color: rgba(255, 240, 245, 0.8); /* Semi-transparent pinkish background */
+    mask-image: linear-gradient(to top, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+}
+
+.about-section h2, .how-to-use-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #C2185B; /* Pinkish Red */
+}
+
+.flashcard {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    height: 100%;
+}
+
+.flashcard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(211, 47, 47, 0.2);
+    border-color: #D32F2F;
+}
+
+.flashcard .icon {
+    font-size: 3rem;
+    color: #D32F2F;
+    margin-bottom: 20px;
+}
+
+.flashcard h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.flashcard-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.how-to-use-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 0;
+    background-color: rgba(255, 240, 245, 0.8); /* Semi-transparent pinkish background */
+}
+
+/* How to Use Section */
+
+.how-to-use-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Footer */
+.home-footer {
+    background-color: #FFFFFF;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}

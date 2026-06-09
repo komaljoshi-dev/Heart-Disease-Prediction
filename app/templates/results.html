@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction Results{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+{% endblock %}
+
+{% block body_class %}results-page{% endblock %}
+
+{% block content %}
+<div class="container mt-5 pt-5">
+    <h1 class="text-center mb-5 result-heading">Prediction Results</h1>
+
+    {% if success %}
+        {% set risk_category = result['risk_assessment']['risk_category'] %}
+        {% set risk_color_class = '' %}
+        {% if risk_category == 'High Risk' %}
+            {% set risk_color_class = 'risk-high' %}
+        {% elif risk_category == 'Medium Risk' %}
+            {% set risk_color_class = 'risk-medium' %}
+        {% else %}
+            {% set risk_color_class = 'risk-low' %}
+        {% endif %}
+
+        <div class="row result-layout">
+            <!-- Left Column: Risk Percentage + Classification Card (2/5th space) -->
+            <div class="col-md-5 mb-4">
+                <div class="card h-100 shadow-lg result-card {{ risk_color_class }}">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
+                        <h2 class="risk-percentage">{{ "%.2f"|format(result['prediction']['probability'] * 100) }}%</h2>
+                        <h3 class="risk-classification mt-3">{{ risk_category }}</h3>
+                        <!-- Risk Score display removed as per request -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Model Accuracy and Recommendations Cards (3/5th space) -->
+            <div class="col-md-7 mb-4 d-flex flex-column">
+                <!-- Model Accuracy Card -->
+                <div class="card shadow-sm mb-4 result-card model-accuracy-card">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Overall Model Accuracy</h4>
+                        <p class="model-accuracy-value">{{ "%.1f"|format(model_accuracy * 100) }}%</p>
+                    </div>
+                </div>
+
+                <!-- Personalized Recommendations Card -->
+                {% if recommendations %}
+                    <div class="card shadow-sm result-card recommendations-card {{ risk_color_class }}">
+                        <div class="card-body">
+                            <h4 class="card-title text-center">Personalized Recommendations</h4>
+                            <ul class="list-group list-group-flush recommendations-list">
+                                {% for rec in recommendations %}
+                                    <li class="list-group-item">{{ rec }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% else %}
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-danger text-white">
+                <h5 class="mb-0">Prediction Failed!</h5>
+            </div>
+            <div class="card-body">
+                <p>There was an error processing your request:</p>
+                <ul class="list-group list-group-flush">
+                    {% for error in errors %}
+                        <li class="list-group-item text-danger">{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                <p class="mt-3">Please try again or contact support if the issue persists.</p>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="text-center mt-5">
+        <a href="{{ url_for('main.dashboard') }}" class="btn btn-primary btn-lg">Go to Dashboard</a>
+        <a href="{{ url_for('main.home') }}" class="btn btn-secondary btn-lg">Back to Home</a>
+    </div>
+</div>
+{% endblock %}

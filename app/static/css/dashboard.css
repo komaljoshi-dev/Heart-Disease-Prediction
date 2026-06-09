@@ -1,0 +1,214 @@
+section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+body.dashboard-page {
+    background-color: rgba(255,230,240,0.9); /* Slightly darker pink */
+}
+
+/* Hero Section Styling */
+.hero-section {
+    background-color: rgba(255, 200, 220, 0.95); /* More pinkish background */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    padding-top: 50px; /* Adjusted for single page view */
+    padding-bottom: 50px; /* Adjusted for single page view */
+}
+.hero-section h1 {
+    color: #C2185B !important; /* Dark pink */
+}
+.hero-section p.lead {
+    color: #424242 !important; /* Grey-blackish */
+}
+
+/* General Card Styling */
+.card {
+    border-radius: 15px;
+    border: none;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for animations */
+    height: 100%; /* Ensure card fills parent height */
+}
+.card:hover {
+    transform: translateY(-6px); /* Lift effect on hover */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+}
+
+/* Section Headings */
+.section-heading {
+    color: #C2185B; /* Dark pink, same as Welcome to Heart Shield */
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+/* Health Indicators Grid */
+.indicators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    /* Removed margin-bottom */
+}
+.indicators-grid .card {
+    aspect-ratio: 1 / 1; /* Enforce square aspect ratio */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.indicators-grid .card .indicator-icon {
+    color: #C2185B; /* Dark pink for icons */
+    font-size: 2.5rem; /* Slightly smaller icon size */
+    margin-bottom: 10px;
+}
+.indicators-grid .card .indicator-title,
+.indicators-grid .card .indicator-value {
+    font-size: 1.2rem; /* Consistent font size */
+    font-weight: bold;
+    color: #424242; /* Grey-blackish font */
+    margin-bottom: 5px;
+}
+.indicators-grid .card .indicator-recommendation {
+    font-size: 0.9rem; /* Small font size */
+    color: #757575; /* Grey color */
+}
+
+/* Assessment Overview Section Cards (Left two cards) */
+.overview-summary-card {
+    text-align: center; /* Center text */
+}
+.overview-summary-card .card-title {
+    font-size: 1.4rem; /* Increased font size */
+    color: #424242;
+}
+.overview-summary-card .card-text {
+    font-size: 2.2rem; /* Increased font size for numbers/dates */
+    color: #C2185B; /* Pink color */
+    font-weight: bold;
+}
+
+/* Pie Chart Container */
+.pie-chart-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.pie-chart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 0;
+}
+.center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #333;
+}
+
+/* New Risk Assessment Section (Split Layout) */
+.new-assessment-split {
+    margin-bottom: 50px; /* Space between sections */
+}
+.quick-access-cards-column {
+    gap: 15px; /* Slightly smaller gap between cards in the column */
+}
+.quick-access-cards-column .flashcard-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+    margin-bottom: 15px; /* Add margin between cards in the column */
+}
+.quick-access-cards-column .flashcard-link:last-child {
+    margin-bottom: 0; /* No margin for the last card */
+}
+.quick-access-cards-column .flashcard {
+    background-color: #FFFFFF;
+    padding: 10px; /* Slightly smaller padding */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Keep original transitions */
+    height: 150px; /* Allow height to adjust */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Removed margin, relying on Bootstrap gutters and flashcard-link margin-bottom */
+}
+.quick-access-cards-column .flashcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.quick-access-cards-column .flashcard .icon {
+    font-size: 2.5rem; /* Slightly smaller icon size */
+    color: #C2185B;
+    margin-bottom: 10px;
+}
+.quick-access-cards-column .flashcard h3 {
+    font-size: 1.2rem; /* Slightly smaller font size */
+    font-weight: bold;
+    color: #424242;
+    margin-bottom: 8px;
+}
+.quick-access-cards-column .flashcard p {
+    font-size: 0.9rem; /* Slightly smaller font size */
+    color: #757575;
+}
+.new-assessment-image {
+    max-height: 500px; /* Increased image height to 500px */
+    width: auto;
+    object-fit: contain;
+    margin: auto; /* Center image vertically */
+    display: block; /* Ensure margin auto works */
+    border-radius: 15px; /* Blended corners */
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+}
+
+
+/* Other existing styles (kept as is) */
+.equal-height-cards {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+}
+.equal-height-cards .card {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+.equal-height-cards .card:last-child {
+    margin-bottom: 0;
+}
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+@media (max-width: 768px) {
+    .split {
+        grid-template-columns: 1fr;
+    }
+}
+.split-image-card {
+    min-height: 300px;
+}

@@ -1,0 +1,94 @@
+/* Manual Input Page Specific Styles */
+
+body.manual-input-page {
+    background-color: #FFF0F5; /* Light pinkish background */
+    padding-top: 150px; /* Increased padding to account for fixed navbar */
+}
+
+/* Navbar Styles (copied from home.css) */
+.home-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 240, 245, 0.9); /* Semi-transparent pinkish background */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1030;
+}
+
+.home-navbar .navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #D32F2F !important; /* Darker Red */
+}
+
+.home-navbar .navbar-text {
+    color: #555;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.home-navbar .nav-link {
+    color: #333 !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.home-navbar .nav-link:hover {
+    color: #D32F2F !important;
+}
+
+.home-navbar .nav-link .fa-user-circle {
+    font-size: 2.5rem; /* Increased icon size */
+}
+
+.home-navbar .btn-outline-danger {
+    border-color: #D32F2F;
+    color: #D32F2F;
+    margin-left: 15px; /* Added space */
+    border-width: 2px;
+    font-weight: 700;
+    padding: 8px 16px;
+    font-size: 1.1rem;
+}
+
+.home-navbar .btn-outline-danger:hover {
+    background-color: #D32F2F;
+    color: #FFF;
+}
+
+.home-navbar .btn-outline-primary {
+    border-color: #D32F2F;
+    color: #D32F2F;
+    font-weight: 700;
+    padding: 8px 16px;
+    font-size: 1.1rem;
+}
+
+.home-navbar .btn-outline-primary:hover {
+    background-color: #D32F2F;
+    color: #FFF;
+}
+
+.manual-input-form-container {
+    background-color: #f8d7da; /* Light pink background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 0; /* Removed top margin */
+    margin-bottom: 40px;
+}
+
+.manual-input-form-container h2 {
+    font-weight: bold;
+    color: #C2185B; /* Pinkish Red */
+}
+
+.manual-input-form-container .btn-primary {
+    background-color: #D32F2F;
+    border-color: #D32F2F;
+}
+
+.manual-input-form-container .btn-primary:hover {
+    background-color: #B71C1C;
+    border-color: #B71C1C;
+}

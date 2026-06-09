@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block body_class %}manual-input-page{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/manual_input.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% if ocr_data or errors %}
+        <h2 class="mb-4">Review and Correct Patient Data</h2>
+        <p class="alert alert-warning">Some data was missing or invalid from the uploaded report. Please review the pre-filled values, correct any highlighted fields, and provide any missing information.</p>
+    {% else %}
+        <h2 class="mb-4">Manual Heart Disease Prediction Input</h2>
+        <p class="alert alert-info">Please enter the patient's data below to get a heart disease prediction.</p>
+    {% endif %}
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="manual-input-form-container">
+        <form action="{{ url_for('main.manual_predict') }}" method="POST">
+            <div class="row">
+                {% for feature_name in feature_names %}
+                    {% set current_value = ocr_data.get(feature_name, '') %}
+                    {% set error_message = '' %}
+                    {% for error in errors %}
+                        {% if feature_name in error %}
+                            {% set error_message = error %}
+                        {% endif %}
+                    {% endfor %}
+
+                    <div class="col-md-6 mb-3">
+                        <label for="{{ feature_name }}" class="form-label">
+                            {{ feature_descriptions.get(feature_name, feature_name) }}
+                            {% if feature_ranges.get(feature_name) %}
+                                <small class="text-muted">({{ feature_ranges[feature_name][0] }} - {{ feature_ranges[feature_name][1] }})</small>
+                            {% endif %}
+                        </label>
+                        <input type="text" class="form-control {% if error_message %}is-invalid{% endif %}" id="{{ feature_name }}" name="{{ feature_name }}" value="{{ current_value }}">
+                        {% if error_message %}
+                            <div class="invalid-feedback">
+                                {{ error_message }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Predict with Corrected Data</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

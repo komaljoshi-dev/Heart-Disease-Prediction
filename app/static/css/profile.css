@@ -1,0 +1,131 @@
+/* Profile Page Specific Styles */
+
+body.profile-page {
+    background-color: #FFF0F5; /* Light pinkish background */
+    padding-top: 70px; /* To account for fixed navbar */
+}
+
+/* Navbar Styles (copied from home.css) */
+.home-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 240, 245, 0.9); /* Semi-transparent pinkish background */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1030;
+}
+
+.home-navbar .navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #D32F2F !important; /* Darker Red */
+}
+
+.home-navbar .navbar-text {
+    color: #555;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.home-navbar .nav-link {
+    color: #333 !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.home-navbar .nav-link:hover {
+    color: #D32F2F !important;
+}
+
+.home-navbar .nav-link .fa-user-circle {
+    font-size: 2.5rem; /* Increased icon size */
+}
+
+.home-navbar .btn-outline-danger {
+    border-color: #D32F2F;
+    color: #D32F2F;
+    margin-left: 15px; /* Added space */
+    border-width: 2px;
+    font-weight: 700;
+    padding: 8px 16px;
+    font-size: 1.1rem;
+}
+
+.home-navbar .btn-outline-danger:hover {
+    background-color: #D32F2F;
+    color: #FFF;
+}
+
+.home-navbar .btn-outline-primary {
+    border-color: #D32F2F;
+    color: #D32F2F;
+    font-weight: 700;
+    padding: 8px 16px;
+    font-size: 1.1rem;
+}
+
+.home-navbar .btn-outline-primary:hover {
+    background-color: #D32F2F;
+    color: #FFF;
+}
+
+.profile-section {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.profile-user-icon {
+    font-size: 8rem;
+    color: #D32F2F; /* Darker Red */
+    margin-bottom: 20px;
+}
+
+.user-info-section p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.user-info-section strong {
+    color: #C2185B; /* Pinkish Red */
+}
+
+.uploads-section .list-group-item {
+    border-color: #F8BBD0; /* Light Pink */
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+.uploads-section .list-group-item:last-child {
+    margin-bottom: 0;
+}
+
+.prediction-history-section .table thead th {
+    background-color: #F8BBD0; /* Light Pink */
+    color: #C2185B; /* Pinkish Red */
+    border-color: #F48FB1; /* Slightly darker pink */
+}
+
+.prediction-history-section .table tbody tr:nth-of-type(odd) {
+    background-color: #FCE4EC; /* Even lighter pink */
+}
+
+.prediction-history-section .table tbody tr:hover {
+    background-color: #F8BBD0; /* Light Pink on hover */
+}
+
+.prediction-history-section .badge-success {
+    background-color: #28a745; /* Green */
+    color: #fff;
+}
+
+.prediction-history-section .badge-warning {
+    background-color: #ffc107; /* Orange */
+    color: #fff;
+}
+
+.prediction-history-section .badge-danger {
+    background-color: #dc3545; /* Red */
+    color: #fff;
+}

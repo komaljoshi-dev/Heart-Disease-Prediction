@@ -1,0 +1,158 @@
+/* Results Page Specific Styles */
+
+body.results-page {
+    /* 3D Style Pinkish Background */
+    background-color: #fce4ec; /* Base color */
+    background-image: 
+        linear-gradient(135deg, rgba(255, 255, 255, .08) 25%, transparent 25%),
+        linear-gradient(225deg, rgba(255, 255, 255, .08) 25%, transparent 25%),
+        linear-gradient(45deg, rgba(255, 255, 255, .08) 25%, transparent 25%),
+        linear-gradient(315deg, rgba(255, 255, 255, .08) 25%, #fce4ec 25%);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px, 20px 20px, 0 0;
+    padding-top: 90px; /* Increased padding for navbar */
+    padding-bottom: 40px;
+}
+
+/* --- Animations --- */
+@keyframes slideInUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- Page Heading --- */
+.results-page h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 3rem !important;
+}
+
+/* --- Layout & Spacing --- */
+.results-page .row > [class*="col-"] {
+    padding: 1rem;
+}
+
+/* --- General Card Styles --- */
+.risk-indicator-box, .model-accuracy-box, .dashboard-card {
+    border: none;
+    border-radius: 20px;
+    opacity: 0; /* Start hidden for animation */
+    animation: slideInUp 0.7s ease-out forwards;
+    margin-bottom: 2rem; /* Add margin for spacing on smaller screens */
+}
+
+/* --- Left Column (Risk Indicator) --- */
+.result-card {
+    background-color: #FFFFFF;
+    padding: 25px;
+    box-shadow: 0 15px 25px rgba(5, 5, 5, 0.1);
+    animation-delay: 0.2s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result-card .risk-percentage {
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.result-card .risk-classification {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* --- Right Column (Accuracy & Recommendations) --- */
+.model-accuracy-box {
+    background: linear-gradient(135deg, #16022c 0%, #072c6b 100%); /* Keep gradient, but use primary button color */
+    color: #212F3D;
+    padding: 30px;
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 0 15px 25px rgba(44, 4, 111, 0.3);
+    animation-delay: 0.2s;
+}
+
+.model-accuracy-box .accuracy-label {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.model-accuracy-box .model-accuracy-value {
+    font-size: 4rem;
+    font-weight: 700;
+    display: block;
+}
+
+.dashboard-card {
+    background-color: #ffffff;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    animation-delay: 0.4s; /* Stagger animation */
+}
+
+/* Risk-specific Colors */
+.risk-high .result-card {
+    box-shadow: 0 0 35px rgba(211, 47, 47, 0.8);
+}
+.risk-high .risk-percentage, .risk-high .risk-classification {
+    color: #D32F2F;
+}
+
+.risk-medium .result-card {
+    box-shadow: 0 0 35px rgba(245, 124, 0, 0.8);
+}
+.risk-medium .risk-percentage, .risk-medium .risk-classification {
+    color: #F57C00;
+}
+
+.risk-low .result-card {
+    box-shadow: 0 0 35px rgba(56, 142, 60, 0.8);
+}
+.risk-low .risk-percentage, .risk-low .risk-classification {
+    color: #388E3C;
+}
+
+/* Recommendations Card */
+.dashboard-card .card-title {
+    color: #C2185B;
+    font-weight: bold;
+}
+
+.dashboard-card ul {
+    list-style-type: none;
+    padding-left: 0;
+    color: var(--text-color);
+}
+
+.dashboard-card li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.dashboard-card li::before {
+    content: '\f058'; /* Font Awesome check-circle icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #388E3C; /* Green check */
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+.risk-high .dashboard-card li::before {
+    content: '\f071'; /* Font Awesome exclamation-triangle icon */
+    color: #D32F2F; /* Red warning */
+}
+
+.risk-medium .dashboard-card li::before {
+    content: '\f06a'; /* Font Awesome exclamation-circle icon */
+    color: #F57C00; /* Orange warning */
+}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block body_class %}login-page-background{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="container mt-3">
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+<div class="d-flex justify-content-center align-items-center mt-5" style="min-height: calc(100vh - 100px);"> {# Adjust min-height as needed #}
+    <div class="col-md-6 px-0 py-0">
+        <div class="left-column w-75 login-form-container">
+            <h2 class="text-center">Welcome to Heart Shield</h2>
+            <h2>Login</h2>
+            <form method="POST">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p>Don't have an account? <a href="{{ url_for('main.register') }}">Register here</a></p>
+            <p><a href="{{ url_for('main.reset_password_request') }}">Forgot your password?</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

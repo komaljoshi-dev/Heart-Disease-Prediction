@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Shield AI - Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body class="home-page">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light home-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand pl-3" href="{{ url_for('main.home') }}">Heart Shield</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#homeNav" aria-controls="homeNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="homeNav">
+                <ul class="navbar-nav mr-auto">
+                    {% if current_user.is_authenticated %}
+                        <li class="nav-item">
+                            <span class="navbar-text">Welcome, {{ current_user.full_name or current_user.username }}</span>
+                        </li>
+                    {% endif %}
+                </ul>
+                <ul class="navbar-nav ml-auto pr-3">
+                    {% if current_user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('main.profile') }}" title="Profile"><i class="fas fa-user-circle fa-lg"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-danger" href="{{ url_for('main.logout') }}">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary mr-2" href="{{ url_for('main.login') }}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary" href="{{ url_for('main.register') }}">Register</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container-fluid">
+            <div class="row hero-row">
+                <div class="col-md-8 text-left">
+                    <h1>Heart Shield AI</h1>
+                    <p class="tagline">Your AI-powered partner in Heart health.<br>Delivering accurate, reliable, and timely risk assessments <br>for a healthier tomorrow.</p>
+                    <a href="{{ url_for('main.dashboard') }}" class="btn btn-primary">Go to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="about-section">
+        <div class="container">
+            <h2>About Heart Shield AI</h2>
+            <div class="row">
+                <div class="col-md-4 d-flex">
+                    <div class="flashcard">
+                        <div class="icon"><i class="fas fa-robot"></i></div>
+                        <h3>AI-Powered Predictions</h3>
+                        <p>Leveraging advanced machine learning to assess cardiovascular risk with high accuracy.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="flashcard">
+                        <div class="icon"><i class="fas fa-file-upload"></i></div>
+                        <h3>Easy Data Input</h3>
+                        <p>Upload medical reports or enter data manually for a quick and seamless experience.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="flashcard">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Actionable Insights</h3>
+                        <p>Receive clear and understandable risk assessments to help you make informed health decisions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Access Section -->
+    <div class="how-to-use-section">
+        <div class="container">
+            <h2>Quick Access</h2>
+            <div class="row">
+                <div class="col-md-4 d-flex">
+                    <a href="{{ url_for('main.manual_input') }}" class="flashcard-link">
+                        <div class="flashcard">
+                            <div class="icon"><i class="fas fa-keyboard"></i></div>
+                            <h3>Start Manual Prediction</h3>
+                            <p>Fill out a short form to get a risk estimate in minutes.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <a href="{{ url_for('main.upload') }}" class="flashcard-link">
+                        <div class="flashcard">
+                            <div class="icon"><i class="fas fa-file-upload"></i></div>
+                            <h3>Upload Medical Report</h3>
+                            <p>Drag and drop PDF or image for instant analysis.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <a href="{{ url_for('main.profile') }}#history" class="flashcard-link">
+                        <div class="flashcard">
+                            <div class="icon"><i class="fas fa-history"></i></div>
+                            <h3>Previous Results</h3>
+                            <p>Review your past predictions and download reports.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="home-footer">
+        <div class="container">
+            <span class="text-muted">&copy; 2025 Heart Shield AI. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

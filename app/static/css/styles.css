@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* Smooth Page Transition */
+body {
+    animation: fadeInAnimation ease 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Global Styles */
+html, body {
+    height: 100%;
+    font-family: 'Inter', sans-serif; /* Apply Inter globally */
+    color: #212121; /* Primary Text */
+}
+
+body {
+    color: #212121; /* Primary Text */
+}
+
+/* Navbar Styles (from upload.css, now general) */
+.home-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 240, 245, 0.9); /* Semi-transparent pinkish background */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1030;
+}
+
+.home-navbar .navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #D32F2F !important; /* Darker Red */
+}
+
+.home-navbar .navbar-text {
+    color: #555;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.home-navbar .nav-link {
+    color: #333 !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.home-navbar .nav-link:hover {
+    color: #D32F2F !important;
+}
+
+.home-navbar .nav-link .fa-user-circle {
+    font-size: 2.5rem; /* Increased icon size */
+}
+
+.home-navbar .btn-outline-danger {
+    border-color: #D32F2F;
+    color: #D32F2F;
+    margin-left: 15px; /* Added space */
+    border-width: 2px;
+    font-weight: 700;
+    padding: 8px 16px;
+    font-size: 1.1rem;
+}
+
+.home-navbar .btn-outline-danger:hover {
+    background-color: #D32F2F;
+    color: #FFF;
+}
+
+.home-navbar .btn-outline-primary {
+    border-color: #D32F2F;
+    color: #D32F2F;
+    font-weight: 700;
+    padding: 8px 16px;
+    font-size: 1.1rem;
+}
+
+.home-navbar .btn-outline-primary:hover {
+    background-color: #D32F2F;
+    color: #FFF;
+}
+
+/* Transparent Footer */
+.transparent-footer {
+    background-color: transparent !important;
+    border-top: none !important;
+    text-align: center;
+}
+
+.transparent-footer .text-muted,
+.transparent-footer a {
+    color: #212121 !important; /* Primary Text for readability */
+}
+
+/* Full Height Row for Login/Register */
+.full-height-row {
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    margin: 0; /* Remove default margin */
+}
+
+/* General Left Column (Form Container) Styling */
+.left-column {
+    background-color: #FFFFFF; /* Card/Surface Light */
+    padding: 40px; /* Generous padding */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 8px 20px rgba(176, 0, 32, 0.3); /* Reddish box-shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #212121; /* Primary Text */
+}
+
+.left-column h2 {
+    color: #0097A7; /* Teal Primary Accent for headings */
+    margin-bottom: 25px;
+    font-weight: 700; /* Bold headings */
+}
+
+.left-column a {
+    color: #1565C0; /* Blue Accent for links */
+}
+
+.left-column a:hover {
+    color: #0097A7; /* Teal on hover */
+}
+
+/* Login Page Specific Styling */
+.login-page-background {
+    background-image: url('/static/images/login-background.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: red !important;
+}
+
+.login-form-container {
+    background-color: rgba(255, 192, 203, 0.8); /* Less transparent */
+    padding: 30px; /* Adjusted padding */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 8px 20px rgba(176, 0, 32, 0.3); /* Reddish box-shadow */
+    width: 550px; /* Increased width for the form */
+    max-width: 90%; /* Max width for responsiveness */
+}
+
+.login-form-container h2:first-child {
+    color: #353232; /* Deep red accent for 'Welcome to Heart Shield' */
+    font-size: 2.2rem; /* Adjusted font size */
+    font-weight: 600; /* Bold */
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.login-form-container h2:nth-child(2) {
+    color: #B00020; /* Red shade from login button */
+    font-size: 1.8rem; /* Adjusted font size */
+    margin-bottom: 20px; /* Adjusted margin */
+}
+
+/* Register Page Specific Styling */
+.register-page-background {
+    background-image: url('/static/images/register-background3.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: blue !important;
+}
+
+.register-form-container {
+    background-color: rgba(255, 192, 203, 0.2); /* Darker pinkish transparent background */
+    border-radius: 12px; /* More rounded corners */
+    width: 450px; /* Fixed width for the form */
+    max-width: 90%; /* Max width for responsiveness */
+    padding: 30px; /* Adjusted padding */
+    box-shadow: 0 8px 20px rgba(176, 0, 32, 0.3); /* Reddish box-shadow */
+    margin: 100px;
+}
+
+/* General Button Styling */
+.btn-primary {
+    background-color: #B00020; /* Deep red accent */
+    border-color: #B00020;
+    font-weight: 500; /* Medium bold */
+    padding: 10px 20px; /* Larger padding */
+    border-radius: 8px; /* Rounded buttons */
+    margin-bottom: 15px; /* Space below button */
+}
+.btn-primary:hover {
+    background-color: #8e001a;
+    border-color: #8e001a;
+}
+/* The following btn-outline-primary is from styles.css, but I will keep the one from home-navbar as it is more specific to the navbar buttons */
+/* .btn-outline-primary {
+    color: #B00020;
+    border-color: #B00020;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+.btn-outline-primary:hover {
+    background-color: #B00020;
+    color: #fff;
+} */
+.btn-secondary {
+    background-color: #1565C0; /* Blue Accent */
+    border-color: #1565C0;
+    font-weight: 500;
+    padding: 10px 20px; /* Larger padding */
+    border-radius: 8px; /* Rounded buttons */
+}
+.btn-secondary:hover {
+    background-color: #0e4e9a;
+    border-color: #0e4e9a;
+}
+
+/* Form Control Styling */
+.form-control {
+    border-radius: 8px; /* Rounded input fields */
+    padding: 10px 15px;
+    border: 1px solid #ced4da; /* Light grey border */
+}
+.form-control:focus {
+    border-color: #B00020; /* Deep red accent */
+    box-shadow: 0 0 0 0.2rem rgba(176, 0, 32, 0.25); /* Reddish shadow */
+}
+
+label {
+    font-weight: bold; /* Increased font weight for labels */
+    margin-bottom: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .left-column, .login-form-container, .register-form-container {
+        width: 95% !important; /* Wider on small screens */
+        padding: 20px !important;
+    }
+    .full-height-row {
+        margin: 10px; /* Reduce margin on small screens */
+    }
+}
+
+/* Results Page Specific Styles */
+
+/* Page Background */
+body.results-page { /* Assuming a body class for results page */
+    background-color: #ffe6eb !important; /* Pinkish background, forced */
+}
+
+/* Main Heading */
+.result-heading {
+    margin-top: 50px; /* Margin top for the heading */
+    color: #C2185B; /* Dark pink */
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Card Animations (Floating) */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.result-card {
+    animation: float 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+    padding: 15px; /* Reduced padding to make cards smaller */
+}
+.result-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Risk Card (Left Column) */
+.result-layout .col-md-5 {
+    padding-right: 10px; /* Adjust spacing between columns */
+}
+.result-layout .col-md-7 {
+    padding-left: 10px; /* Adjust spacing between columns */
+}
+
+.result-card.risk-high {
+    background-color: #FFFFFF; /* White background */
+    color: #D32F2F; /* Darker red text */
+    border: none;
+    box-shadow: 0 8px 20px rgba(211, 47, 47, 0.3); /* Red shadow */
+}
+.result-card.risk-medium {
+    background-color: #FFFFFF; /* White background */
+    color: #FBC02D; /* Darker yellow text */
+    border: none;
+    box-shadow: 0 8px 20px rgba(255, 152, 0, 0.3); /* Orange shadow */
+}
+.result-card.risk-low {
+    background-color: #FFFFFF; /* White background */
+    color: #388E3C; /* Darker green text */
+    border: none;
+    box-shadow: 0 8px 20px rgba(56, 142, 60, 0.3); /* Green shadow */
+}
+/* ... */
+/* Model Accuracy Card */
+.model-accuracy-card {
+    background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%) !important; /* Modern blue/purple gradient */
+    color: #FFFFFF !important; /* White text with increased specificity */
+    border: none; /* Removed border */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Subtle dark shadow */
+}
+.model-accuracy-card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFFFFF !important; /* White text with increased specificity */
+}
+.model-accuracy-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FFFFFF !important; /* White text with increased specificity */
+}
+
+/* Recommendations Card */
+.recommendations-card {
+    border: none; /* Removed border */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Added box shadow */
+}
+.recommendations-card .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #212121; /* Black text */
+}
+.recommendations-list {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0;
+}
+.recommendations-list .list-group-item {
+    background-color: transparent;
+    border: none;
+    padding: 8px 0;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 25px; /* Space for custom bullet */
+    color: #212121; /* Black text */
+}
+.recommendations-list .list-group-item::before {
+    content: "\f00c"; /* Font Awesome checkmark icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: #388E3C; /* Green checkmark */
+}
+.recommendations-card.risk-high .recommendations-list .list-group-item::before {
+    color: #D32F2F; /* Red checkmark for high risk */
+}
+.recommendations-card.risk-medium .recommendations-list .list-group-item::before {
+    color: #FBC02D; /* Yellow checkmark for medium risk */
+}
